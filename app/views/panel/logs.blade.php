@@ -7,7 +7,7 @@
 <div class="content">
     <div class="module">
         <div class="module-head">
-            <h3>Currently Issued Logs</h3>
+            <h3>Chi Tiết Sách Cho Mượn</h3>
         </div>
         <div class="module-body">
             <div class="row-fluid">
@@ -15,12 +15,12 @@
                     <thead>
                         <tr>
                             <th>Log ID</th>
-                            <th>Book Issue ID</th>
-                            <th>Book Name</th>
-                            <th>Student ID</th>
-                            <th>Student Name</th>
-                            <th>Issued On</th>
-                            <th>Return Date</th>                        
+                            <th>Mã Ấn Bản</th>
+                            <th>Tên Sách</th>
+                            <th>Mã Sinh Viên</th>
+                            <th>Tên Sinh Viên</th>
+                            <th>Ngày Mượn</th>
+                            <th>Ngày Trả</th>                        
                         </tr>
                     </thead>
                     <tbody id="issue-logs-table">

@@ -7,7 +7,7 @@
 <div class="content">
     <div class="module">
         <div class="module-head">
-            <h3>Tables</h3>
+            <h3>Sách Theo Danh Mục</h3>
         </div>
         <div class="module-body">
 <!--             <p>
@@ -26,12 +26,12 @@
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>Book Title</th>
-                        <th>Author</th>
-                        <th>Description</th>
-                        <th>Category</th>
-                        <th>Available</th>
-                        <th>Total</th>
+                        <th>Tiêu Đề</th>
+                        <th>Tác Giả</th>
+                        <th>Mô Tả</th>
+                        <th>Thể Loại</th>
+                        <th>Có Sẵn</th>
+                        <th>Tổng Số Ấn Bản</th>
                     </tr>
                 </thead>
                 <tbody id="all-books">

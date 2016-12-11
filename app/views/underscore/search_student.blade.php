@@ -1,4 +1,4 @@
-<div class="alert-success"><center>Student Details</center></div>
+<div class="alert-success"><center>Chi Tiết Sinh Viên</center></div>
 <dl class="dl-horizontal">
 <%
     var flag = false;
@@ -19,21 +19,21 @@
 <%
     }
 %>
-    <dt>Student ID</dt>
+    <dt>Mã Sinh Viên</dt>
     <dd><%= obj.student_id %></dd>
-    <dt>Name of Student</dt>
+    <dt>Tên Sinh Viên</dt>
     <dd><%= obj.first_name %> <%= obj.last_name %></dd>
-    <dt>Student Category</dt>
-    <dd><%= obj.category %></dd>
-    <dt>Email ID</dt>
+    {{-- <dt>Student Category</dt>
+    <dd><%= obj.category %></dd> --}}
+    <dt>Email</dt>
     <dd><%= obj.email_id %></dd>
-    <dt>Roll Number</dt>
-    <dd><%= obj.roll_num %>/<%= obj.branch %>/<%= obj.year %></dd>
+    {{-- <dt>Roll Number</dt>
+    <dd><%= obj.roll_num %>/<%= obj.branch %>/<%= obj.year %></dd> --}}
 
     <%
         if(!flag){
     %>
-        <dt>Number of Books Issued</dt>
+        <dt>Số Sách Đã Mượn</dt>
         <dd><%= obj.books_issued %></dd>
     <%
         }
@@ -45,17 +45,17 @@
         if(obj.issued_books.length > 0){
 %>
 
-<div class="alert-success"><center>Issued Books' Details</center></div>
+<div class="alert-success"><center>Chi Tiết Sách Đã Mượn</center></div>
 
 <%
             for(var book in obj.issued_books){
 %>
 <dl class="dl-horizontal">
-    <dt>Issue ID</dt>
+    <dt>Mã Ấn Bản</dt>
     <dd><%= obj.issued_books[book].book_issue_id %></dd>
-    <dt>Name of Book</dt>
+    <dt>Tên Sách</dt>
     <dd><%= obj.issued_books[book].name %></dd>
-    <dt>Issued On</dt>
+    <dt>Mượn Vào Lúc</dt>
     <dd><%= obj.issued_books[book].issued_at %></dd>
 </dl>
 <%

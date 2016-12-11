@@ -1,30 +1,30 @@
-<div class="alert-success"><center>Book Details</center></div>
+<div class="alert-success"><center>Chi Tiết Sách</center></div>
 <dl class="dl-horizontal">
-    <dt>Book Name</dt>
+    <dt>Tên Sách</dt>
     <dd><%= obj.book_name %></dd>
-    <dt>Author</dt>
+    <dt>Tác Giả</dt>
     <dd><%= obj.author %></dd>
-    <dt>Book Category</dt>
+    <dt>Thể Loại</dt>
     <dd><%= obj.category %></dd>
-    <dt>Available Status</dt>
+    <dt>Có Sẵn</dt>
     <dd><%= obj.available_status %></dd>
-    <dt>Date of addition</dt>
+    <dt>Ngày Thêm Vào</dt>
     <dd><%= obj.added_at_timestamp %></dd>
 </dl>
 
 <%
     if(obj.hasOwnProperty('student')){
 %>
-<div class="alert-success"><center>Student Details</center></div>
+<div class="alert-success"><center>Chi Tiết Sinh Viên Mượn Sách</center></div>
 <dl class="dl-horizontal">
-    <dt>Student ID</dt>
+    <dt>Mã Sinh Viên</dt>
     <dd><%= obj.student.student_id %></dd>
-    <dt>Student Name</dt>
+    <dt>Tên Sinh viên</dt>
     <dd><%= obj.student.first_name %> <%= obj.student.last_name %></dd>
-    <dt>Student Category</dt>
+    {{-- <dt>Student Category</dt>
     <dd><%= obj.student.category %></dd>
     <dt>Roll Number</dt>
-    <dd><%= obj.student.roll_num %></dd>
+    <dd><%= obj.student.roll_num %></dd> --}}
 </dl>
 <%
     }

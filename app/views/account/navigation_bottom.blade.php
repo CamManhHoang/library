@@ -1,6 +1,5 @@
 <div class="footer">
 	<div class="container">
-		<b class="copyright">&copy; 2015 NSIT - Automated Library Management System </b> All rights reserved.
-		<br><a href="https://github.com/prabhakar267/library-management-system" target="_blank">Fork on Github</a>
+		<b class="copyright">&copy; 2016 UET - Hệ thống quản lý thông tin thư viện </b> All rights reserved.
 	</div>
 </div>
