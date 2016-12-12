@@ -11,7 +11,7 @@ function loadResults(){
         url : url,
         success : function(data){
             if($.isEmptyObject(data)){
-                table.html('<tr><td colspan="99">No Books in this category</td></tr>');
+                table.html('<tr><td colspan="99">Không có cuốn sách nào thuộc thể loại này</td></tr>');
             } else {
                 table.html('');
                 for (var book in data) {
