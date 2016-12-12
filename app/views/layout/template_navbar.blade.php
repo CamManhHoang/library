@@ -10,8 +10,13 @@
                         <img src="{{ Config::get('view.images') }}/user.png" class="nav-avatar" />
                         <b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">Trang cá nhân</a></li>
-                            <li class="divider"></li>
+                            @if (Auth::check() && Auth::user()->is_student)
+                                <li>
+                                    <a href="/{{ Auth::user()->username }}/profile">Trang cá nhân</a>
+                                </li>
+                                <li class="divider"></li>
+                            @endif
+                            
                             <li><a href="{{ URL::route('account-sign-out') }}">Đăng xuất</a></li>
                         </ul>
                     </li>

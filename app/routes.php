@@ -68,24 +68,12 @@ Route::group(array('before' => 'guest'), function() {
 Route::resource('/books', 'BooksController');
 
 // Authenticated group 
-Route::group(array('before' => 'auth'), function() {
-
-	// Home Page of Control Panel
-	Route::get('/',array(
-		'as' 	=> 'home',
-		'uses'	=> 'HomeController@home'
-	));	
+Route::group(array('before' => ['auth', 'admin']), function() {
 
 	// Render Add Books panel
     Route::get('/add-books', array(
         'as' => 'add-books',
         'uses' => 'BooksController@renderAddBooks'
-    ));
-
-	// Render All Books panel
-    Route::get('/all-books', array(
-        'as' => 'all-books',
-        'uses' => 'BooksController@renderAllBooks'
     ));
 
 	// Students
@@ -99,9 +87,6 @@ Route::group(array('before' => 'auth'), function() {
         'as' => 'students-for-approval',
         'uses' => 'StudentController@renderApprovalStudents'
     ));
-
-    // Main students Controlller resource
-    Route::resource('/student', 'StudentController');
 
     // Issue Logs
     Route::get('/issue-return', array(
@@ -117,10 +102,36 @@ Route::group(array('before' => 'auth'), function() {
 
     // Main Logs Controlller resource
     Route::resource('/issue-log', 'LogController');
+   
+});
 
-	// Sign out (GET) 
+Route::group(array('before' => 'auth'), function() {
+
+	// Home Page of Control Panel
+	Route::get('/',array(
+		'as' 	=> 'home',
+		'uses'	=> 'HomeController@home'
+	));
+
+	// Render All Books panel
+    Route::get('/all-books', array(
+        'as' => 'all-books',
+        'uses' => 'BooksController@renderAllBooks'
+    ));
+
+    // Main students Controlller resource
+    Route::resource('/student', 'StudentController');
+
+    // Sign out (GET) 
     Route::get('/sign-out', array(
     	'as' => 'account-sign-out',
 		'uses' => 'AccountController@getSignOut'
     ));
+
+	// Users Profile
+    Route::get('/{username}/profile', [
+    	'before' => 'student',
+    	'as' => 'profile', 
+    	'uses' => 'ProfilesController@show']
+	);
 });

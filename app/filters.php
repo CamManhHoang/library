@@ -49,6 +49,23 @@ Route::filter('auth', function()
 });
 
 
+Route::filter('student', function()
+{
+	if (Auth::check() && Auth::user()->is_student()) {
+		return ;
+	}
+	return Redirect::home();
+});
+
+Route::filter('admin', function()
+{
+	if (Auth::check() && !Auth::user()->is_student()) {
+		return ;
+	}
+	return Redirect::home();
+});
+
+
 Route::filter('auth.basic', function()
 {
 	return Auth::basic();
