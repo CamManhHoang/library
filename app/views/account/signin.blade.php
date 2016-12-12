@@ -8,7 +8,7 @@
 			<div class="module module-login span4 offset1">
 				<form class="form-vertical" action="{{ URL::route('account-sign-in-post') }}" method="POST">
 					<div class="module-head">
-						<h3>Librarian / Admin Sign In</h3>
+						<h3>Đăng Nhập Panel Điều Khiển</h3>
 					</div>
 					<div class="module-body">
 						<div class="control-group">
@@ -31,14 +31,14 @@
 					<div class="module-foot">
 						<div class="control-group">
 							<div class="controls clearfix">
-								<button type="submit" class="btn btn-primary pull-right">Login</button>
+								<button type="submit" class="btn btn-primary pull-right">Đăng Nhập</button>
 								{{ Form::token() }}
 								<label class="checkbox">
-									<input type="checkbox" name="remember" id="remember"> Remember me
+									<input type="checkbox" name="remember" id="remember"> Nhớ Mật Khẩu
 								</label>
 							</div>
 						</div>
-						<a href="{{ URL::route('account-create') }}">New librarian? Sign Up</a>
+						<a href="{{ URL::route('account-create') }}">Chưa có tài khoản sinh viên? Đăng ký ở đây</a>
 					</div>
 				</form>
 			</div>

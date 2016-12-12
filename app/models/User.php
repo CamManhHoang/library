@@ -33,4 +33,15 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	    return $this->password;
 	}
 
+	public function student() {
+		return $this->hasOne('Student');
+	}
+
+	public function is_student()
+    {
+        if (Auth::guest()) return false;
+
+        return Auth::user()->is_student == true;
+    }
+
 }

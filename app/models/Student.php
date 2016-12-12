@@ -11,4 +11,9 @@ class Student extends Eloquent{
 
 	protected $hidden = array();
 
+	public function user()
+	{
+		return $this->belongsTo('User');
+	}
+
 }
