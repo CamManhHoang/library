@@ -28,6 +28,11 @@
                     </a>
                 </li>
                 <li>
+                    <a href="{{ URL::route('add-category') }}">
+                        <i class="menu-icon icon-folder-open"></i>Thêm Danh Mục Sách
+                    </a>
+                </li>
+                <li>
                     <a href="{{ URL::route('issue-return') }}">
                         <i class="menu-icon icon-signout"></i>Quản Lý Mượn/Trả Sách
                     </a>

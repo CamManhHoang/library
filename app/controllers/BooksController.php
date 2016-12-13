@@ -252,8 +252,36 @@ class BooksController extends \BaseController {
 		$book = Books::with('issues')->findOrFail($id);
 
 		return View::make('panel.book-issues')->withBook($book);
-		
 
+    }
+
+    public function addCategory()
+    {
+    	return View::make('panel.add-category');
+    }
+
+    public function postAddCategory()
+    {
+    	$rules = array(
+            'category'       => 'required',
+        );
+        $validator = Validator::make(Input::all(), $rules);
+
+        if ($validator->fails()) {
+            return Redirect::back()
+                ->withErrors($validator);
+        } else {
+
+            $category = new Categories;
+
+            $category->category = Input::get('category');
+
+            $category->save();
+
+            // redirect
+            Session::flash('success', 'Thêm Mới Thể Loại Sách Thành Công!');
+            return Redirect::back();
+        }
     }
 
 }

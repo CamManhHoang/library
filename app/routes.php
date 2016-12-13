@@ -76,6 +76,16 @@ Route::group(array('before' => ['auth', 'admin']), function() {
         'uses' => 'BooksController@renderAddBooks'
     ));
 
+    Route::get('/add-category', array(
+        'as' => 'add-category',
+        'uses' => 'BooksController@addCategory'
+    ));
+
+    Route::post('/add-category', array(
+        'as' => 'post-add-category',
+        'uses' => 'BooksController@postAddCategory'
+    ));
+
 	// Students
     Route::get('/registered-students', array(
         'as' => 'registered-students',
