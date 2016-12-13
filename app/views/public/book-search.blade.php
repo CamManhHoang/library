@@ -7,12 +7,12 @@
 		<div class="row">
 			<div class="module span12">
 				<div class="module-head">
-					<h3>Student Registration Form</h3>
+					<h3>Tra Cứu Sách Thư Viện</h3>
 				</div>
 				<div class="module-body">
 					<form class="form-horizontal row-fluid">
 						<div class="control-group">
-							<label class="control-label">Name or author<br>of the book</label>
+							<label class="control-label">Tên hoặc tác giả<br>của sách</label>
 							<div class="controls">
 								<textarea class="span12" rows="2"></textarea>
 							</div>
@@ -20,7 +20,7 @@
 
 						<div class="control-group">
 							<div class="controls" id="search_book_button">
-								<a class="btn btn-default">Search Book</a>
+								<a class="btn btn-default">Tìm Sách</a>
 							</div>
 						</div>
 					</form>
@@ -33,12 +33,12 @@
 		            <table class="table table-striped table-bordered table-condensed">
 		                <thead>
 		                    <tr>
-		                        <th>Book ID</th>
-		                        <th>Book Title</th>
-		                        <th>Author</th>
-		                        <th>Description</th>
-		                        <th>Category</th>
-		                        <th>Status</th>
+		                        <th>Mã Sách</th>
+		                        <th>Tiêu Đề</th>
+		                        <th>Tác Giả</th>
+		                        <th>Mô tả</th>
+		                        <th>Thể Loại</th>
+		                        <th>Trạng Thái</th>
 		                    </tr>
 		                </thead>
 		                <tbody id="book-results"></tbody>

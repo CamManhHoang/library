@@ -44,11 +44,10 @@
 			</div>
 			<div class="module module-login span4 offset2">
 				<div class="module-head">
-					<h3>Student Section</h3>
+					<h3>Khu Vực Tra Cứu</h3>
 				</div>
 				<div class="module-body">
-                    <p><a href="{{ URL::route('student-registration') }}"><strong>Student Registration Form</strong></a></p>
-                    <p><a href="{{ URL::route('search-book') }}"><strong>Search Book</strong></a></p>
+                    <p><a href="{{ URL::route('search-book') }}"><strong>Tìm Sách</strong></a></p>
 				</div>
 			</div>
         </div>

@@ -132,6 +132,18 @@ Route::group(array('before' => 'auth'), function() {
     Route::get('/{username}/profile', [
     	'before' => 'student',
     	'as' => 'profile', 
-    	'uses' => 'ProfilesController@show']
-	);
+    	'uses' => 'ProfilesController@show'
+	]);
+
+	Route::get('/{username}/profile/edit', [
+    	'before' => ['student', 'profile'],
+    	'as' => 'profile.edit', 
+    	'uses' => 'ProfilesController@edit'
+	]);
+
+	Route::put('/{username}/profile', [
+		'before' => ['student', 'profile'],
+    	'as' => 'profile.update', 
+    	'uses' => 'ProfilesController@update'
+	]);
 });

@@ -66,6 +66,16 @@ Route::filter('admin', function()
 });
 
 
+Route::filter('profile', function($route)
+{
+    
+    $username = $route->getParameter('username');
+    if( Auth::check() && Auth::user()->username != $username) {
+        // not authenticated user, so access is denied
+        return Redirect::to('/');
+    }
+});
+
 Route::filter('auth.basic', function()
 {
 	return Auth::basic();

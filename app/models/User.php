@@ -44,4 +44,13 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
         return Auth::user()->is_student == true;
     }
 
+    /**
+     * Determine if the given user is the same as the current one.
+     * @return bool
+     */
+    public function isCurrent()
+    {
+        return Auth::id() ? ($this->id == Auth::id()) : false;
+    }
+
 }

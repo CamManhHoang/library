@@ -65,11 +65,18 @@ class AccountController extends BaseController {
 				'password' 	=> Hash::make($password)	// Changed the default column for Password
 			));
 
+			$userdata->student()->create([
+		        'user_id' => $userdata->id,
+		        'approved' => true,
+		        'category' => '1',
+		        'branch' => '1',
+		    ]);
+
 			if($userdata) {			
 
 
 				return Redirect::route('account-sign-in')
-					->with('global', 'Your account has been created. We have sent you an email to activate your accout');				
+					->with('global', 'Tài khoản sinh viên đã được tạo thành công. Bạn có thể đăng nhập để sử dụng các tính năng của hệ thống!');				
 			}
 		}
 	}

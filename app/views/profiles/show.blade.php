@@ -42,6 +42,14 @@
                             </tr>
                         </tbody>
                     </table>
+
+                    @if (Auth::check())
+                        @if ($user->isCurrent())
+                            <a href="/{{ Auth::user()->username }}/profile/edit" class="btn btn-info" role="button"><i class="menu-icon icon-edit"></i>Edit</a>
+                        @endif
+                    @endif
+
+                    
                 </div>
             </div>
         </div>
