@@ -15,8 +15,7 @@ class Books extends Eloquent{
     public function issues()
     {
     	// $issue = new Issue;
-        return $this::count();
-        	// ->hasMany('Issue', 'book_id', 'book_id');
+        return $this::hasMany('Issue', 'book_id', 'book_id');
         	// ->with('books');
         	// ->select('book_id','available_status','issue_id');
         	// ->first()->count;

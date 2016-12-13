@@ -14,6 +14,6 @@
 			}
 		%>
 	</td>
-	<td><a class="btn btn-success"><%= obj.avaliable %></a></td>
-	<td><a class="btn btn-inverse"><%= obj.total_books %></a></td>
+	<td><a class="btn btn-success" href="/all-books/<%= obj.book_id %>/issues"><%= obj.avaliable %></a></td>
+	<td><a class="btn btn-inverse" href="/all-books/<%= obj.book_id %>/issues"><%= obj.total_books %></a></td>
 </tr>

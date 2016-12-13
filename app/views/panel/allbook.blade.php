@@ -10,11 +10,6 @@
             <h3>Sách Theo Danh Mục</h3>
         </div>
         <div class="module-body">
-<!--             <p>
-                <strong>Combined</strong>
-                -
-                <small>table class="table table-striped table-bordered table-condensed"</small>
-            </p> -->
             <div class="controls">
                 <select class="" id="category_fill">
                     @foreach($categories_list as $category)
@@ -25,7 +20,7 @@
             <table class="table table-striped table-bordered table-condensed">
                 <thead>
                     <tr>
-                        <th>ID</th>
+                        <th>Mã Sách</th>
                         <th>Tiêu Đề</th>
                         <th>Tác Giả</th>
                         <th>Mô Tả</th>

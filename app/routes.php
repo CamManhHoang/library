@@ -119,6 +119,11 @@ Route::group(array('before' => 'auth'), function() {
         'uses' => 'BooksController@renderAllBooks'
     ));
 
+    Route::get('/all-books/{book}/issues', array(
+        'as' => 'book.issues',
+        'uses' => 'BooksController@showIssues'
+    ));
+
     // Main students Controlller resource
     Route::resource('/student', 'StudentController');
 

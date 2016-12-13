@@ -17,7 +17,7 @@ class BooksController extends \BaseController {
 	public function index()
 	{
 
-		$book_list = Books::select('book_id','title','author','description','category_id')
+		$book_list = Books::with('issues')
 			->orderBy('book_id');
 		
 		$this->filterQuery($book_list);
@@ -244,6 +244,16 @@ class BooksController extends \BaseController {
 
 		return View::make('public.book-search')
 			->with('categories_list', $db_control->categories_list);
+    }
+
+    public function showIssues($id)
+    {
+    	
+		$book = Books::with('issues')->findOrFail($id);
+
+		return View::make('panel.book-issues')->withBook($book);
+		
+
     }
 
 }
