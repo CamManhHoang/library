@@ -61,7 +61,7 @@
                 <div class="module-body">
                     <form class="form-horizontal row-fluid" id="findissueform">
                         <div class="control-group">
-                            <label class="control-label">Điền ID Sách</label>
+                            <label class="control-label">Điền Mã Ấn Bản</label>
                             <div class="controls">
                                 <input type="number" placeholder="" class="span9">
                                 <a class="btn homepage-form-submit">Submit</a>

@@ -146,4 +146,15 @@ Route::group(array('before' => 'auth'), function() {
     	'as' => 'profile.update', 
     	'uses' => 'ProfilesController@update'
 	]);
+
+	Route::get('/change-password', [
+    	'as' => 'profile.password', 
+    	'uses' => 'ProfilesController@changePassword'
+	]);
+
+	Route::post('/change-password', [
+    	'as' => 'post-change-password', 
+    	'uses' => 'ProfilesController@postChangePassword'
+	]);
+
 });

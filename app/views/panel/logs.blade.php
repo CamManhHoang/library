@@ -20,7 +20,7 @@
                             <th>Mã Sinh Viên</th>
                             <th>Tên Sinh Viên</th>
                             <th>Ngày Mượn</th>
-                            <th>Ngày Trả</th>                        
+                            <th>Hạn Trả</th>                        
                         </tr>
                     </thead>
                     <tbody id="issue-logs-table">
