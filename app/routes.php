@@ -117,6 +117,10 @@ Route::group(array('before' => ['auth', 'admin']), function() {
         'as' => 'book-orders-list',
         'uses' => 'BooksController@ordersList'
     ));
+    Route::delete('/delete-order/{order}', array(
+        'as' => 'delete-order',
+        'uses' => 'BooksController@deleteOrder'
+    ));
    
 });
 

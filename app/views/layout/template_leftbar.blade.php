@@ -33,6 +33,11 @@
                     </a>
                 </li>
                 <li>
+                    <a href="{{ URL::route('book-orders-list') }}">
+                        <i class="menu-icon icon-th-list"></i>Quản Lý Phiếu Mượn Sách Online
+                    </a>
+                </li>
+                <li>
                     <a href="{{ URL::route('issue-return') }}">
                         <i class="menu-icon icon-signout"></i>Quản Lý Mượn/Trả Sách
                     </a>
@@ -40,11 +45,6 @@
                 <li>
                     <a href="{{ URL::route('currently-issued') }}">
                         <i class="menu-icon icon-list-ul"></i>Chi Tiết Sách Đã Cho Mượn
-                    </a>
-                </li>
-                <li>
-                    <a href="{{ URL::route('book-orders-list') }}">
-                        <i class="menu-icon icon-th-list"></i>Quản Lý Phiếu Mượn Sách Online
                     </a>
                 </li>
             @endif

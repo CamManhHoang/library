@@ -304,4 +304,16 @@ class BooksController extends \BaseController {
     	return View::make('panel.orders-list')->withOrders($orders);
     }
 
+    public function deleteOrder($id)
+    {
+    	$order = Order::find($id);
+
+    	if ($order->delete()) {
+            return Redirect::back()->withSuccess('Xóa Phiếu Mượn Sách Thành Công!');
+        }
+
+        return Redirect::back()
+            ->withErrors('Đã xảy ra lỗi!');
+    }
+
 }
