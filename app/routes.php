@@ -187,4 +187,10 @@ Route::group(array('before' => 'auth'), function() {
         'uses' => 'BooksController@orderBook'
     ]);
 
+    Route::get('/{id}/books-issue', [
+        'before' => ['student'],
+        'as' => 'student-issues', 
+        'uses' => 'StudentController@showBooksIssue'
+    ]);
+
 });

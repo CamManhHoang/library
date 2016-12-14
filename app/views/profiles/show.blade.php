@@ -38,7 +38,7 @@
                             </tr>
                             <tr>
                                 <td>Số lượng sách đang mượn:</td>
-                                <td><i class="fa fa-phone"></i> {{ $user->student->books_issued }} cuốn</td>
+                                <td><a href="/{{ Auth::user()->student->student_id }}/books-issue"><i class="menu-icon icon-book"></i> {{ $user->student->books_issued }} cuốn</a></td>
                             </tr>
                         </tbody>
                     </table>

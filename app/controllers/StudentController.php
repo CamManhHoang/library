@@ -224,4 +224,27 @@ class StudentController extends \BaseController {
 		}
 	}
 
+	public function showBooksIssue($id)
+	{
+		$student = Student::find($id);
+
+		$student_issued_books = Logs::select('book_issue_id', 'issued_at')
+			->where('student_id', '=', $id)
+			->orderBy('time_stamp', 'desc')
+			->take($student->books_issued)
+			->get();
+
+		foreach($student_issued_books as $issued_book){
+			$issue = Issue::find($issued_book->book_issue_id);
+			$book = Books::find($issue->book_id);
+			$issued_book->name = $book->title;
+			$issued_book->author = $book->author;
+			$issued_book->issued_at = date('d-M', $issued_book->issued_at);
+		}
+
+		$student->issued_books = $student_issued_books;
+
+		return View::make('panel.student-books-issue')->withStudent($student);
+	}
+
 }
