@@ -96,11 +96,11 @@ class BooksController extends \BaseController {
 			}
 
 			if($db_flag)
-				throw new Exception('Invalid update data provided');
+				throw new Exception('Dữ Liệu Không Hợp Lệ!');
 
 		});
 	
-		return "Books Added successfully to Database";
+		return "Sách Đã Được Thêm Mới Thành Công Vào Database! ";
 
 	}
 
@@ -146,7 +146,7 @@ class BooksController extends \BaseController {
 	{	
 		$issue = Issue::find($id);
 		if($issue == NULL){
-			throw new Exception('Invalid Book ID');
+			throw new Exception('Mã Ấn Bản Không Hợp Lệ');
 		}
 
 		$issue->added_at_timestamp = date('d-M-y h:i A', strtotime($issue->added_at_timestamp));

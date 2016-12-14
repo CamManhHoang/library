@@ -51,7 +51,7 @@ $(document).ready(function(){
         sendJSON.number = parseInt(f$('input[data-form-field~=number]').val());
 
         if(sendJSON.title == "" || sendJSON.author == "" || sendJSON.description == "" || sendJSON.number == null){
-            module_body.prepend(templates.alert_box( {type: 'danger', message: 'Book Details Not Complete'} ));
+            module_body.prepend(templates.alert_box( {type: 'danger', message: 'Chi Tiết Về Sách Chưa Đầy Đủ!'} ));
             send_flag = false;
         }
         

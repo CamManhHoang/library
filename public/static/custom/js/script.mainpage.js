@@ -13,16 +13,16 @@ function loadSearchedBooks(string){
         url : url,
         success : function(data){
             if($.isEmptyObject(data)){
-                table.html('<tr><td colspan="99">No such books found in library</td></tr>');
+                table.html('<tr><td colspan="99">Không tìm thấy cuốn sách này trong thư viện.</td></tr>');
             } else {
                 table.html('');
                 for(var books in data) {
                     book = data[books];
                     console.log(book.avaliability);
                     if(book.avaliability){
-                        book.avaliability = '<a class="btn btn-success">Available</a>';
+                        book.avaliability = '<a class="btn btn-success">Sẵn Có</a>';
                     } else {
-                        book.avaliability = '<a class="btn btn-danger">Not Available</a>';
+                        book.avaliability = '<a class="btn btn-danger">Đã Mượn Hết</a>';
                     }
                     
                     table.append(default_tpl(book));

@@ -54,7 +54,7 @@ class ProfilesController extends \BaseController {
             $user->student->save();
 
             // redirect
-            Session::flash('success', 'Successfully updated profile!');
+            Session::flash('success', 'Cập Nhật Thông Tin Cá Nhân Thành Công!');
             return Redirect::back();
         }
 	}

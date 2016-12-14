@@ -10,7 +10,7 @@ function loadResults(){
         url : url,
         success : function(data){
             if($.isEmptyObject(data)){
-                table.html('<tr><td colspan="99">No Logs</td></tr>');
+                table.html('<tr><td colspan="99">Không có bản ghi.</td></tr>');
             } else {
                 table.html('');
                 // console.log(JSON.stringify(data));
@@ -90,7 +90,7 @@ $(document).ready(function(){
             bookID = selectedForm.find("input[data-form-field~=book-issue-id]").val();
         
         if(studentID == "" || bookID == ""){
-            selectedForm.prepend(templates.alert_box( {type: 'danger', message: "Invalid Data"} ));
+            selectedForm.prepend(templates.alert_box( {type: 'danger', message: "Dữ Liệu Không Hợp Lệ"} ));
         } else {
             issueBook(bookID, studentID, selectedForm);
         }
@@ -101,7 +101,7 @@ $(document).ready(function(){
             bookID = selectedForm.find("input[data-form-field~=book-issue-id]").val();
         
         if(bookID == ""){
-            selectedForm.prepend(templates.alert_box( {type: 'danger', message: "Invalid Data"} ));
+            selectedForm.prepend(templates.alert_box( {type: 'danger', message: "Dữ Liệu Không Hợp Lệ"} ));
         } else {
             returnBook(bookID, selectedForm);
         }

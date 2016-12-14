@@ -44,7 +44,7 @@
                     <table class="table table-striped table-bordered table-condensed" style="display: none;">
                         <thead>
                             <tr>
-                                <th>ID Sách</th>
+                                <th>Mã Sách</th>
                                 <th>Tên Sách</th>
                                 <th>Tác Giả</th>
                                 <th>Mô Tả</th>

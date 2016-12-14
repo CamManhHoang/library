@@ -49,7 +49,7 @@ class LogController extends \BaseController {
 		$student = Student::find($studentID);
 		
 		if($student == NULL){
-			throw new Exception('Invalid Student ID');
+			throw new Exception('Mã Sinh Viên Không Hợp Lệ');
 		} else {
 			$approved = $student->approved;
 			
@@ -62,15 +62,15 @@ class LogController extends \BaseController {
 				$max_allowed = StudentCategories::where('cat_id', '=', $category)->firstOrFail()->max_allowed;
 				
 				if($books_issued >= $max_allowed){
-					throw new Exception('Student cannot issue any more books');
+					throw new Exception('Sinh Viên Không Thể Mượn Thêm Vì Đã Đạt Giới Hạn Số Lượng Sách Mượn.');
 				} else {
 					$book = Issue::find($bookID);
 					if($book == NULL){
-						throw new Exception('Invalid Book Issue ID');
+						throw new Exception('Mã Ấn Bản Không Hợp Lệ');
 					} else {
 						$book_availability = $book->available_status;
 						if($book_availability != 1){
-							throw new Exception('Book not available for issue');
+							throw new Exception('Cuốn Sách Này Không Có Sẵn Để Mượn.');
 						} else {
 
 							// book is to be issued
@@ -96,7 +96,7 @@ class LogController extends \BaseController {
 								$student->save();
 							});
 
-							return 'Successfully Issued';
+							return 'Mượn Sách Thành Công!';
 						}
 					}
 				}
@@ -121,7 +121,7 @@ class LogController extends \BaseController {
 		$log = Logs::where($conditions);
 
 		if(!$log->count()){
-			throw new Exception('Invalid Book ID entered or book already returned');
+			throw new Exception('Mã Ấn Bản Không Hợp Lệ hoặc Sách Đã Được Trả!');
 		} else {
 		
 			$log = Logs::where($conditions)
@@ -151,7 +151,7 @@ class LogController extends \BaseController {
 				
 			});
 
-			return 'Successfully returned';
+			return 'Trả Sách Thành Công!';
 			
 		}
 	}

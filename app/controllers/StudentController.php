@@ -65,7 +65,7 @@ class StudentController extends \BaseController {
 	{
 		$student = Student::find($id);
 		if($student == NULL){
-			throw new Exception('Invalid Student ID');
+			throw new Exception('Mã Sinh Viên Không Hợp Lệ');
 		}
 
 		$student->year = (int)substr($student->year, 2, 4);
