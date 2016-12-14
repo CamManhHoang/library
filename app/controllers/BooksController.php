@@ -284,4 +284,24 @@ class BooksController extends \BaseController {
         }
     }
 
+    public function orderBook($id)
+    {
+    	$user = Auth::user();
+
+    	$order = New Order;
+
+    	$order->student_id = $user->student->student_id;
+    	$order->book_issue_id = Input::get('book_issue_id');
+    	$order->save();
+
+    	Session::flash('success', 'Tạo Phiếu Mượn Sách Thành Công. Mời Bạn Đến Thư Viện Để Thủ Thư Làm Thủ Tục Mượn Sách Và Bàn Giao Cho Bạn.');
+            return Redirect::back();
+    }
+
+    public function ordersList()
+    {
+    	$orders = Order::all();
+    	return View::make('panel.orders-list')->withOrders($orders);
+    }
+
 }

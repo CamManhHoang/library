@@ -112,6 +112,11 @@ Route::group(array('before' => ['auth', 'admin']), function() {
 
     // Main Logs Controlller resource
     Route::resource('/issue-log', 'LogController');
+
+    Route::get('/book-orders-list', array(
+        'as' => 'book-orders-list',
+        'uses' => 'BooksController@ordersList'
+    ));
    
 });
 
@@ -171,5 +176,11 @@ Route::group(array('before' => 'auth'), function() {
     	'as' => 'post-change-password', 
     	'uses' => 'ProfilesController@postChangePassword'
 	]);
+
+    Route::post('/orders/{book}', [
+        'before' => 'student',
+        'as' => 'order-book', 
+        'uses' => 'BooksController@orderBook'
+    ]);
 
 });

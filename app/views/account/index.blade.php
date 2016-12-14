@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="keywords" content="">
 
-    <link rel="shortcut icon" href="">
+    <link rel="shortcut icon" href="{{ Config::get('view.images') }}/favicon.ico">
     <link rel="image_src" href="" />
     <link rel="canonical" href="" />
 

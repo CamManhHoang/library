@@ -42,6 +42,11 @@
                         <i class="menu-icon icon-list-ul"></i>Chi Tiết Sách Đã Cho Mượn
                     </a>
                 </li>
+                <li>
+                    <a href="{{ URL::route('book-orders-list') }}">
+                        <i class="menu-icon icon-th-list"></i>Quản Lý Phiếu Mượn Sách Online
+                    </a>
+                </li>
             @endif
             
         </ul>
